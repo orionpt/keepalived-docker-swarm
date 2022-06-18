@@ -25,7 +25,7 @@ jobs:
           images: orionpt/keepalived-docker-swarm
           # generate Docker tags based on the following events/attributes
           tags: |
-            type=pep440,pattern={{version}}
+            type=semver,pattern={{version}}
       -
         name: Set up QEMU
         uses: docker/setup-qemu-action@v1
