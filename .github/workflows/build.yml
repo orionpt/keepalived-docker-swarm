@@ -4,8 +4,6 @@ name: Publish Docker image
 on:
   release:
     types: [published]
-    tags:
-      - 'v*'    
   push:
     branches: [ "main" ]
   pull_request:
@@ -27,10 +25,7 @@ jobs:
           images: orionpt/keepalived-docker-swarm
           # generate Docker tags based on the following events/attributes
           tags: |
-            type=schedule
-            type=ref,event=branch
-            type=ref,event=tag
-            type=ref,event=pr
+            type=pep440,pattern={{version}}
       -
         name: Set up QEMU
         uses: docker/setup-qemu-action@v1
