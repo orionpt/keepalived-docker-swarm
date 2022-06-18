@@ -20,7 +20,7 @@ jobs:
       -
         name: Docker meta
         id: meta
-        uses: crazy-max/ghaction-docker-meta@v2
+        uses: crazy-max/ghaction-docker-meta@v4
         with:
           images: orionpt/keepalived-docker-swarm
           # generate Docker tags based on the following events/attributes
